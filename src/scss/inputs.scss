@@ -1,0 +1,16 @@
+input, select {
+  border-radius: $border-radius;
+  padding: $input-padding-y $input-padding-x;
+  border: $border;
+
+  // Custom dropdown icon?
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+  //appearance: none;
+
+  outline: none;
+}
+
+label {
+  font-weight: $font-weight-bolder;
+}

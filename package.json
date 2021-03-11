@@ -1,0 +1,17 @@
+{
+  "name": "among-plain-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Maczuga <maczugapl@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "node-sass": "^5.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-perf": "^3.3.0",
+    "eslint-plugin-unused-imports": "^1.1.0"
+  }
+}

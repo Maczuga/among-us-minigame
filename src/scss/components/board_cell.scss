@@ -1,0 +1,43 @@
+$board-cell-border-color-fallback: #1d1d1d;
+$board-cell-border-color: linear-gradient(90deg, $board-cell-border-color-fallback 0%, #252525 50%, #393939 100%);
+$board-cell-button-background: #d0d0d0; // Taken from in-game screenshot
+$board-cell-button-background-hover: #3186c9; // Taken from in-game screenshot
+$board-cell-border-width: 3px;
+
+button.board_cell {
+  width: 100px;
+  height: 100px;
+
+  margin: 5px;
+  box-shadow: inset 0 0 8px 5px rgba($board-cell-border-color-fallback, .5);
+  //border: 5px solid $board-cell-border-color;
+  border: none;
+  border-radius: 8px;
+  background-color: $board-cell-button-background; // Taken from in-game screenshot
+  position: relative;
+
+  &:before {
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: -$board-cell-border-width;
+    background: $board-cell-border-color;
+    border-radius: inherit;
+    position: absolute;
+    z-index: -1;
+  }
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:hover {
+
+  }
+
+  &:focus {
+    background-color: $board-cell-button-background-hover;
+    outline: none;
+  }
+}

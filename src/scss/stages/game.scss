@@ -1,0 +1,14 @@
+$preview-bg-color: #000;
+
+.stage-game {
+  width: 100%;
+  text-align: center;
+
+  .preview {
+    width: 50%;
+    background-color: $preview-bg-color;
+  }
+  .user-area {
+    width: 50%;
+  }
+}
