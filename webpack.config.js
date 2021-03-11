@@ -69,7 +69,11 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        title: "Not Among Us",
+        // Load a custom template (lodash by default)
+        template: "./src/index.html"
+      }),
       new WebpackNotifierPlugin(),
       devMode && new webpack.HotModuleReplacementPlugin(),
       !devMode && new MiniCssExtractPlugin({
