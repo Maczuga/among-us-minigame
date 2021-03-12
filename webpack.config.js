@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackNotifierPlugin = require("webpack-notifier");
@@ -7,15 +6,9 @@ const WebpackNotifierPlugin = require("webpack-notifier");
 module.exports = (env, argv) => {
   const devMode = argv.mode === "development";
 
-  const devEntries = devMode ? [
-    "webpack-dev-server/client?http://localhost:8080",
-    "webpack/hot/only-dev-server",
-  ] : [];
-
   return {
     entry: {
       "app": [
-        ...devEntries,
         "./src/index.js"
       ]
     },
@@ -75,7 +68,6 @@ module.exports = (env, argv) => {
         template: "./src/index.html"
       }),
       new WebpackNotifierPlugin(),
-      devMode && new webpack.HotModuleReplacementPlugin(),
       !devMode && new MiniCssExtractPlugin({
         filename: "[name]/build.css",
       }),

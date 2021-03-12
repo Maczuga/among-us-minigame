@@ -1,5 +1,7 @@
 import {settings} from "../settings";
-import {ApplicationStore, EventManager} from "./store";
+import {EventManager} from "./EventManager";
+import {ApplicationStore} from "./store/Store";
+import {random} from "./utils";
 
 class GameLogic {
   constructor() {
@@ -100,9 +102,7 @@ class GameLogic {
   }
 
   randomNumberInBoardRange() {
-    const max = ApplicationStore.state.boardSize;
-    // from 0
-    return Math.floor(Math.random() * (max));
+    return random(0, ApplicationStore.state.boardSize - 1);
   }
 
   randomSpot() {

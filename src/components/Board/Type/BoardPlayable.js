@@ -1,4 +1,4 @@
-import {GameController} from "../../../lib/GameLogic";
+import {GameController} from "../../../lib";
 import {Board} from "../Board";
 import {GameBoardBaseName} from "../BoardUtils";
 import {BoardItemClickable} from "../Item/BoardItemClickable";

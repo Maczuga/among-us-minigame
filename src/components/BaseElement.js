@@ -1,4 +1,4 @@
-import {ApplicationStore} from "../lib/store";
+import {ApplicationStore} from "../lib";
 
 export class BaseElement extends HTMLElement {
   constructor() {

@@ -1,5 +1,5 @@
 import {settings} from "../settings";
-import {ApplicationStore} from "../lib/store";
+import {ApplicationStore} from "../lib";
 
 export class SelectSteps extends HTMLSelectElement {
   constructor() {

@@ -1,4 +1,4 @@
-import {ApplicationStore} from "../../lib/store";
+import {ApplicationStore} from "../../lib";
 import {BaseButton} from "./BaseButton";
 
 export class StartButton extends BaseButton {

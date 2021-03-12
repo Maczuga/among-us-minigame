@@ -2,7 +2,7 @@ import {BaseElement} from "../BaseElement";
 import {StageSelectSteps} from "./StageSelectSteps";
 import {StageGame} from "./StageGame";
 import "./StageContainer.scss";
-import {ApplicationStore} from "../../lib/store";
+import {ApplicationStore} from "../../lib";
 
 export class StageContainer extends BaseElement {
   constructor() {

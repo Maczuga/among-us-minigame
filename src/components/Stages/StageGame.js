@@ -1,6 +1,6 @@
 import {BaseElement} from "../BaseElement";
 import "./StageGame.scss";
-import {GameController} from "../../lib/GameLogic";
+import {GameController} from "../../lib";
 import {TaskCompleted} from "../TaskCompleted";
 
 export class StageGame extends BaseElement {

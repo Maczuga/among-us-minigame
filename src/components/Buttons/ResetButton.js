@@ -1,4 +1,4 @@
-import {GameController} from "../../lib/GameLogic";
+import {GameController} from "../../lib";
 import {BaseButton} from "./BaseButton";
 
 export class ResetButton extends BaseButton {

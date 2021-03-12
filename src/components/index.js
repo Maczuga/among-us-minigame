@@ -1,6 +1,7 @@
 export * from "./BaseElement";
 export * from "./SelectSteps";
 export * from "./TaskCompleted";
+export * from "./StarBackground";
 
 export * from "./Buttons/BaseButton";
 export * from "./Buttons/ResetButton";
