@@ -1,4 +1,4 @@
-import {EventManager} from "./EventManager";
+import {EventManager} from "../EventManager";
 import {State} from "./State";
 
 class Store {

@@ -1,10 +1,13 @@
 import {BaseElement} from "../BaseElement";
 import "./StageGame.scss";
 import {GameController} from "../../lib/GameLogic";
+import {TaskCompleted} from "../TaskCompleted";
 
 export class StageGame extends BaseElement {
   constructor() {
     super();
+
+    GameController.eventManager.subscribe("onGameFinish", () => this.onGameFinish());
   }
 
   connectedCallback() {
@@ -17,6 +20,11 @@ export class StageGame extends BaseElement {
     setTimeout(() => {
       GameController.start();
     }, 500);
+  }
+
+  onGameFinish() {
+    const taskCompleted = new TaskCompleted();
+    this.appendChild(taskCompleted);
   }
 
   render() {

@@ -8,4 +8,6 @@ declare class BaseElement extends HTMLElement {
   render(): HTMLElement | string | null;
 
   listenedStates: Array<keyof State>;
+
+  static componentName: string;
 }

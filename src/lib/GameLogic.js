@@ -28,7 +28,6 @@ class GameLogic {
     }
 
     this.generatePoint();
-
     this.playPreview();
   }
 
