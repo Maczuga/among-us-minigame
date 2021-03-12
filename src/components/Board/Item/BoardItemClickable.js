@@ -12,6 +12,7 @@ export class BoardItemClickable extends BoardItem {
     this.button.addEventListener("mouseleave", () => this.onLeave());
 
     GameController.eventManager.subscribe("onGameBoxFail", () => this.setLock(true));
+    GameController.eventManager.subscribe("onGameFinish", () => this.setLock(true));
     GameController.eventManager.subscribe("onGamePreviewStart", () => this.setLock(true));
     GameController.eventManager.subscribe("onGamePreviewEnd", () => this.setLock(false));
   }
