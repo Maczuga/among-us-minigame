@@ -1,5 +1,9 @@
+@import "/src/scss/variables";
+
 .btn {
-  padding: .5rem 1rem;
+  font-size: $font-size-base;
+
+  padding: $input-padding-y $input-padding-x;
   border: 1px solid #000;
   background-color: #ccc;
 }

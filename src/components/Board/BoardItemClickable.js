@@ -16,10 +16,8 @@ export class BoardItemClickable extends BoardItem {
     GameController.eventManager.subscribe("onGamePreviewEnd", () => this.setLock(false));
   }
 
-  onClick(e) {
+  onClick() {
     const {x, y} = this;
-
-    console.log(e);
 
     GameController.onBoxClick(x, y);
     this.button.blur();

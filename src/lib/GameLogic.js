@@ -1,3 +1,4 @@
+import {settings} from "../settings";
 import {ApplicationStore, EventManager} from "./store";
 
 class GameLogic {
@@ -44,9 +45,12 @@ class GameLogic {
       }
 
       const point = this.spots[i];
+
+      console.log(point);
+
       this.eventManager.publish("onGameBoxHighlight", {point});
       i++;
-    }, 500);
+    }, settings.HIGHLIGHT_DELAY_MS + 50);
   }
 
   onBoxClick(x, y) {
@@ -76,7 +80,6 @@ class GameLogic {
 
     const next = this.randomSpot();
     this.spots.push(next);
-    console.log("Generated: ", next);
 
     this.eventManager.publish("onGamePointGenerated", {point: next});
 

@@ -1,13 +1,13 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemPreview.scss";
 import {GameController} from "../../lib/GameLogic";
+import {settings} from "../../settings";
 
 export class BoardItemPreview extends BoardItem {
   constructor(x, y) {
     super(x, y);
 
     GameController.eventManager.subscribe("onGameBoxHighlight", (data) => this.onBoxHighlight(data));
-    console.log(GameController.eventManager);
   }
 
   onBoxHighlight({point}) {
@@ -19,7 +19,7 @@ export class BoardItemPreview extends BoardItem {
     this.classList.add("highlight");
     setTimeout(() => {
       this.classList.remove("highlight");
-    }, 500);
+    }, settings.HIGHLIGHT_DELAY_MS);
   }
 }
 
