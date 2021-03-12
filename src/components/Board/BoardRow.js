@@ -2,21 +2,23 @@ import {BaseElement} from "../BaseElement";
 import {GameBoardBaseName} from "./BoardUtils";
 import "./BoardRow.scss";
 import {settings} from "../../settings";
-import {BoardItem} from "./BoardItem";
 
 export class BoardRow extends BaseElement {
   static get observedAttributes() {
     return ["y"];
   }
 
-  constructor(y) {
+  constructor(y, cellTag) {
     super();
+
     this.y = y;
+    this.cellTag = cellTag;
   }
 
   generateRow() {
-    for (let x = 0; x < settings.GAME_BOARD_SIZE; x++)
-      this.appendChild(new BoardItem(x, this.y));
+    for (let x = 0; x < settings.GAME_BOARD_SIZE; x++) {
+      this.appendChild(new this.cellTag(x, this.y));
+    }
   }
 
   update() {

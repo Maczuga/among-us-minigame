@@ -16,7 +16,7 @@ export class Board extends BaseElement {
       throw new Error("this.tag property is missing!");
 
     for (let y = 0; y < settings.GAME_BOARD_SIZE; y++) {
-      this.appendChild(new BoardRow(y));
+      this.appendChild(new BoardRow(y, cellTag));
     }
   }
 

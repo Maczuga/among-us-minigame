@@ -1,0 +1,17 @@
+$board-cell-border-color-fallback: #1d1d1d;
+$board-cell-button-background: #d0d0d0; // Taken from in-game screenshot
+$board-cell-button-background-hover: #3186c9; // Taken from in-game screenshot
+$board-cell-border-width: 3px;
+
+game-board-item-preview {
+  width: 100px;
+  height: 100px;
+  display: block;
+
+  margin: 5px;
+  border-radius: 8px;
+
+  &.highlight {
+    background-color: $board-cell-button-background-hover;
+  }
+}

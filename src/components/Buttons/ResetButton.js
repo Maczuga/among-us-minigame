@@ -1,4 +1,4 @@
-import {ApplicationStore} from "../../lib/store";
+import {GameController} from "../../lib/GameLogic";
 import {BaseButton} from "./BaseButton";
 
 export class ResetButton extends BaseButton {
@@ -10,7 +10,8 @@ export class ResetButton extends BaseButton {
   }
 
   resetGame() {
-    ApplicationStore.state.stage = 1;
+    GameController.reset();
+    GameController.start();
   }
 }
 

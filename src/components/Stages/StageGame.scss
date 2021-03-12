@@ -3,6 +3,14 @@ $preview-bg-color: #000;
 stage-game {
   width: 100%;
   text-align: center;
+  display: block;
+
+  // Slide up
+  transform: translateY(100vh);
+  transition: transform .2s ease;
+  &.shown {
+    transform: none;
+  }
 
   .preview {
     width: 50%;

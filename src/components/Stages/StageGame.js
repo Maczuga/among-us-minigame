@@ -1,7 +1,24 @@
 import {BaseElement} from "../BaseElement";
 import "./StageGame.scss";
+import {GameController} from "../../lib/GameLogic";
 
 export class StageGame extends BaseElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    setTimeout(() => {
+      this.classList.add("shown");
+    }, 100);
+
+    setTimeout(() => {
+      GameController.start();
+    }, 500);
+  }
+
   render() {
     return `
 <div class="row">

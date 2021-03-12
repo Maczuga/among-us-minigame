@@ -13,5 +13,7 @@ export * from "./Board/Board";
 export * from "./Board/BoardContainer";
 export * from "./Board/BoardRow";
 export * from "./Board/BoardItem";
+export * from "./Board/BoardItemClickable";
+export * from "./Board/BoardItemPreview";
 export * from "./Board/BoardPlayable";
 export * from "./Board/BoardPreview";

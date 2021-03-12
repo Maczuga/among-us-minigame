@@ -7,23 +7,6 @@ export class BoardItem extends BaseElement {
     super();
     this.x = x;
     this.y = y;
-
-    this.tabIndex = 0;
-
-    this.addEventListener("mouseup", () => this.onClick());
-    this.addEventListener("mouseleave", () => this.onLeave());
-  }
-
-  onClick() {
-    const {x, y} = this;
-
-    console.log("Clicked: ", x, y);
-    this.blur();
-  }
-
-  onLeave() {
-    if (document.activeElement === this)
-      this.blur();
   }
 }
 
