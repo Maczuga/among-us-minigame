@@ -1,13 +1,13 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemPreview.scss";
-import {GameController} from "../../../lib";
+import {EventManager} from "../../../lib";
 import {settings} from "../../../settings";
 
 export class BoardItemPreview extends BoardItem {
   constructor(x, y) {
     super(x, y);
 
-    GameController.eventManager.subscribe("onGameBoxHighlight", (data) => this.onBoxHighlight(data));
+    EventManager.subscribe("onGameBoxHighlight", (data) => this.onBoxHighlight(data));
   }
 
   onBoxHighlight({point}) {

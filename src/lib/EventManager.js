@@ -1,4 +1,4 @@
-export class EventManager {
+class EventHandler {
   constructor() {
     this.events = {};
   }
@@ -21,3 +21,5 @@ export class EventManager {
     this.events[event].push(callback);
   }
 }
+
+export const EventManager = new EventHandler();

@@ -1,6 +1,6 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemClickable.scss";
-import {GameController} from "../../../lib";
+import {EventManager, GameController} from "../../../lib";
 
 export class BoardItemClickable extends BoardItem {
   constructor(x, y) {
@@ -11,10 +11,10 @@ export class BoardItemClickable extends BoardItem {
     this.button.addEventListener("mouseup", () => this.onClick());
     this.button.addEventListener("mouseleave", () => this.onLeave());
 
-    GameController.eventManager.subscribe("onGameBoxFail", () => this.setLock(true));
-    GameController.eventManager.subscribe("onGameFinish", () => this.setLock(true));
-    GameController.eventManager.subscribe("onGamePreviewStart", () => this.setLock(true));
-    GameController.eventManager.subscribe("onGamePreviewEnd", () => this.setLock(false));
+    EventManager.subscribe("onGameBoxFail", () => this.setLock(true));
+    EventManager.subscribe("onGameFinish", () => this.setLock(true));
+    EventManager.subscribe("onGamePreviewStart", () => this.setLock(true));
+    EventManager.subscribe("onGamePreviewEnd", () => this.setLock(false));
   }
 
   onClick() {

@@ -1,4 +1,4 @@
-import {GameController} from "../../../lib";
+import {EventManager, GameController} from "../../../lib";
 import {Board} from "../Board";
 import {GameBoardBaseName} from "../BoardUtils";
 import {BoardItemClickable} from "../Item/BoardItemClickable";
@@ -9,7 +9,7 @@ export class BoardPlayable extends Board {
     super();
     this.tag = BoardItemClickable;
 
-    GameController.eventManager.subscribe("onGameBoxFail", (data) => this.onGameBoxFail(data));
+    EventManager.subscribe("onGameBoxFail", (data) => this.onGameBoxFail(data));
   }
 
   onGameBoxFail() {

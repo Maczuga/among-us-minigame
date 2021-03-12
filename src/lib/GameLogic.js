@@ -1,14 +1,11 @@
 import {settings} from "../settings";
-import {EventManager} from "./EventManager";
 import {ApplicationStore} from "./store/Store";
 import {random} from "./utils";
+import {EventManager} from "./EventManager";
 
 class GameLogic {
   constructor() {
     this.reset();
-
-    // This one cannot be reset on start, because will unsubscribe from box events.
-    this.eventManager = new EventManager();
   }
 
   reset() {
@@ -18,14 +15,14 @@ class GameLogic {
 
   start() {
     this.reset();
-    this.eventManager.publish("onGameStart");
+    EventManager.publish("onGameStart");
 
     this.nextRound();
   }
 
   nextRound() {
     if (this.isMaxGenerated()) {
-      this.eventManager.publish("onGameFinish");
+      EventManager.publish("onGameFinish");
       return;
     }
 
@@ -36,37 +33,36 @@ class GameLogic {
   playPreview() {
     this.clickCount = 0;
 
-    this.eventManager.publish("onGamePreviewStart");
+    EventManager.publish("onGamePreviewStart");
     let i = 0;
     const interval = setInterval(() => {
       if (i >= this.spots.length) {
         clearInterval(interval);
-        this.eventManager.publish("onGamePreviewEnd");
+        EventManager.publish("onGamePreviewEnd");
         return;
       }
 
       const point = this.spots[i];
 
-      this.eventManager.publish("onGameBoxHighlight", {point});
+      EventManager.publish("onGameBoxHighlight", {point});
       i++;
     }, settings.HIGHLIGHT_DELAY_MS + 50);
   }
 
   onBoxClick(x, y) {
-    this.eventManager.publish("onGameBoxClick", {point: [x, y]});
+    EventManager.publish("onGameBoxClick", {point: [x, y]});
     const result = this.validateClick(x, y);
-    this.eventManager.publish("onGameBoxValidated", {result, point: [x, y]});
+    EventManager.publish("onGameBoxValidated", {result, point: [x, y]});
 
     if (result)
       this.clickCount++;
     else {
-      this.eventManager.publish("onGameBoxFail", {result, point: [x, y]});
+      EventManager.publish("onGameBoxFail", {result, point: [x, y]});
       return;
     }
 
     if (this.clickCount >= this.spots.length) {
       this.nextRound();
-      return;
     }
   }
 
@@ -77,7 +73,7 @@ class GameLogic {
     const next = this.randomSpot();
     this.spots.push(next);
 
-    this.eventManager.publish("onGamePointGenerated", {point: next});
+    EventManager.publish("onGamePointGenerated", {point: next});
 
     return next;
   }

@@ -1,13 +1,13 @@
 import {BaseElement} from "../BaseElement";
 import "./StageGame.scss";
-import {GameController} from "../../lib";
+import {EventManager, GameController} from "../../lib";
 import {TaskCompleted} from "../TaskCompleted";
 
 export class StageGame extends BaseElement {
   constructor() {
     super();
 
-    GameController.eventManager.subscribe("onGameFinish", () => this.onGameFinish());
+    EventManager.subscribe("onGameFinish", () => this.onGameFinish());
   }
 
   connectedCallback() {
