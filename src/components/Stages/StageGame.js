@@ -29,7 +29,7 @@ export class StageGame extends BaseElement {
 
   render() {
     return `
-<div class="row">
+<div class="row boards">
   <game-board-container>
     <game-board-preview></game-board-preview>
   </game-board-container>

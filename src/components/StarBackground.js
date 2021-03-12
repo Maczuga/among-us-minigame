@@ -3,7 +3,7 @@ import {random} from "../lib";
 
 const MIN_SIZE = 1;
 const MAX_SIZE = 5;
-const MAX_CIRCLES = 100;
+const MAX_CIRCLES = 50;
 
 export class StarBackground extends HTMLCanvasElement {
   constructor() {
@@ -34,7 +34,7 @@ export class StarBackground extends HTMLCanvasElement {
         this.cancelAnimationFrame()(this.animationFrame);
 
       this.connectedCallback();
-    }, 100);
+    }, 250);
   }
 
   animate() {

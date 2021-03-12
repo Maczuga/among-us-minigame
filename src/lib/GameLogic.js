@@ -47,8 +47,6 @@ class GameLogic {
 
       const point = this.spots[i];
 
-      console.log(point);
-
       this.eventManager.publish("onGameBoxHighlight", {point});
       i++;
     }, settings.HIGHLIGHT_DELAY_MS + 50);
@@ -58,9 +56,6 @@ class GameLogic {
     this.eventManager.publish("onGameBoxClick", {point: [x, y]});
     const result = this.validateClick(x, y);
     this.eventManager.publish("onGameBoxValidated", {result, point: [x, y]});
-
-    console.log("Clicked: ", x, y);
-    console.log("Click was: ", result ? "OK" : "BAD");
 
     if (result)
       this.clickCount++;

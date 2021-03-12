@@ -9,7 +9,7 @@ game-board-item-clickable {
   margin: 5px;
 
   button {
-    border: 1px solid $board-cell-border-color-fallback;
+    border: 1px solid rgba($board-cell-border-color-fallback, .5);
     display: block;
     cursor: pointer;
 

@@ -1,11 +1,14 @@
 $primary: #000;
 $secondary: #fff;
 
+$body-bg: #000;
+$body-color: #fff;
+
 //region Borders
-$border-radius: 0;
-$border-width: 1px;
+$border-radius: .75rem;
+$border-width: 2px;
 $border-style: solid;
-$border-color: #ccc;
+$border-color: #fff;
 $border: $border-width $border-style $border-color;
 //endregion
 
@@ -17,9 +20,9 @@ $input-padding-x: 1rem;
 //region Fonts
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
-$font-size-sm: .85rem;
-$font-size-base: 1rem;
-$font-size-lg: 1.2rem;
+$font-size-base: 1.25rem;
+$font-size-sm: $font-size-base * .9;
+$font-size-lg: $font-size-base * 1.1;
 
 $font-weight-light: 300;
 $font-weight-base: 400;

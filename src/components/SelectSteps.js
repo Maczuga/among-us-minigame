@@ -18,7 +18,7 @@ export class SelectSteps extends HTMLSelectElement {
   }
 
   onChange(e) {
-    ApplicationStore.state.rounds = Number(e.target.value || settings.DEFAULT_STEP);
+    ApplicationStore.state.rounds = e.target.value;
   }
 }
 

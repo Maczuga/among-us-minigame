@@ -3,6 +3,10 @@ input, select {
   padding: $input-padding-y $input-padding-x;
   border: $border;
 
+  background-color: $body-bg;
+  color: $body-color;
+  font-size: $font-size-base;
+
   // Custom dropdown icon?
   //-webkit-appearance: none;
   //-moz-appearance: none;

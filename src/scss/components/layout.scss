@@ -10,6 +10,19 @@
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+label {
+  margin-bottom: .25rem;
+}
 header {
   text-align: center;
   font-size: 3rem;

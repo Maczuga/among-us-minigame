@@ -1,9 +1,19 @@
 @import "/src/scss/variables";
 
 .btn {
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
 
   padding: $input-padding-y $input-padding-x;
-  border: 1px solid #000;
-  background-color: #ccc;
+
+  border: 2px solid #fff;
+  background-color: #000;
+  color: #fff;
+  border-radius: $border-radius;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+  }
 }

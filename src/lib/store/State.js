@@ -22,6 +22,7 @@ export class State {
     return Number(this._rounds || settings.DEFAULT_STEP);
   }
   set rounds(value) {
+    this._rounds = value;
     localStorage.setItem("rounds", String(value));
   }
   // endregion
