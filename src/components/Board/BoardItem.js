@@ -3,10 +3,6 @@ import {GameBoardBaseName} from "./BoardUtils";
 import "./BoardItem.scss";
 
 export class BoardItem extends BaseElement {
-  static get observedAttributes() {
-    return ["x", "y"];
-  }
-
   constructor(x, y) {
     super();
     this.x = x;

@@ -14,7 +14,6 @@ export class SelectSteps extends HTMLSelectElement {
       this.appendChild(opt);
     }
 
-    console.log(this);
     this.addEventListener("change", this.onChange);
   }
 

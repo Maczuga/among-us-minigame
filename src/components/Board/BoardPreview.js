@@ -1,6 +1,7 @@
 import {Board} from "./Board";
 import {BoardItem} from "./BoardItem";
 import {GameBoardBaseName} from "./BoardUtils";
+import "./BoardPreview.scss";
 
 export class BoardPreview extends Board {
   constructor() {

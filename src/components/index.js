@@ -10,6 +10,7 @@ export * from "./Stages/StageSelectSteps";
 export * from "./Stages/StageGame";
 
 export * from "./Board/Board";
+export * from "./Board/BoardContainer";
 export * from "./Board/BoardRow";
 export * from "./Board/BoardItem";
 export * from "./Board/BoardPlayable";
