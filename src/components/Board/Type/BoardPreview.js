@@ -1,6 +1,6 @@
-import {Board} from "./Board";
-import {GameBoardBaseName} from "./BoardUtils";
-import {BoardItemPreview} from "./BoardItemPreview";
+import {Board} from "../Board";
+import {GameBoardBaseName} from "../BoardUtils";
+import {BoardItemPreview} from "../Item/BoardItemPreview";
 import "./BoardPreview.scss";
 
 export class BoardPreview extends Board {

@@ -1,7 +1,7 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemPreview.scss";
-import {GameController} from "../../lib/GameLogic";
-import {settings} from "../../settings";
+import {GameController} from "../../../lib/GameLogic";
+import {settings} from "../../../settings";
 
 export class BoardItemPreview extends BoardItem {
   constructor(x, y) {

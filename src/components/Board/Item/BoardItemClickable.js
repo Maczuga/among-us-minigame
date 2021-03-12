@@ -1,6 +1,6 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemClickable.scss";
-import {GameController} from "../../lib/GameLogic";
+import {GameController} from "../../../lib/GameLogic";
 
 export class BoardItemClickable extends BoardItem {
   constructor(x, y) {

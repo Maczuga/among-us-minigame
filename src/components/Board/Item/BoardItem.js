@@ -1,5 +1,5 @@
-import {BaseElement} from "../BaseElement";
-import {GameBoardBaseName} from "./BoardUtils";
+import {BaseElement} from "../../BaseElement";
+import {GameBoardBaseName} from "../BoardUtils";
 import "./BoardItem.scss";
 
 export class BoardItem extends BaseElement {

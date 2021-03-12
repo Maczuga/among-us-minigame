@@ -9,11 +9,11 @@ export * from "./Stages/StageContainer";
 export * from "./Stages/StageSelectSteps";
 export * from "./Stages/StageGame";
 
-export * from "./Board/Board";
 export * from "./Board/BoardContainer";
+export * from "./Board/Board";
 export * from "./Board/BoardRow";
-export * from "./Board/BoardItem";
-export * from "./Board/BoardItemClickable";
-export * from "./Board/BoardItemPreview";
-export * from "./Board/BoardPlayable";
-export * from "./Board/BoardPreview";
+export * from "./Board/Type/BoardPlayable";
+export * from "./Board/Type/BoardPreview";
+export * from "./Board/Item/BoardItem";
+export * from "./Board/Item/BoardItemClickable";
+export * from "./Board/Item/BoardItemPreview";

@@ -1,7 +1,7 @@
-import {GameController} from "../../lib/GameLogic";
-import {Board} from "./Board";
-import {GameBoardBaseName} from "./BoardUtils";
-import {BoardItemClickable} from "./BoardItemClickable";
+import {GameController} from "../../../lib/GameLogic";
+import {Board} from "../Board";
+import {GameBoardBaseName} from "../BoardUtils";
+import {BoardItemClickable} from "../Item/BoardItemClickable";
 import "./BoardPlayable.scss";
 
 export class BoardPlayable extends Board {
