@@ -1,5 +1,6 @@
-// import styles from "./App.styles.scss";
-import {StageContainer,BaseElement} from "./components";
+import {StageContainer, BaseElement} from "./components";
+
+import "./App.scss";
 
 export class App extends BaseElement {
   constructor() {
