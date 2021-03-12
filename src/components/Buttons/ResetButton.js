@@ -1,4 +1,4 @@
-import {StageContainer} from "../Stages/StageContainer";
+import {ApplicationStore} from "../../lib/store";
 import {BaseButton} from "./BaseButton";
 
 export class ResetButton extends BaseButton {
@@ -10,11 +10,7 @@ export class ResetButton extends BaseButton {
   }
 
   resetGame() {
-    const stageContainer = StageContainer.me;
-    if (!stageContainer)
-      return;
-
-    stageContainer.stage = 1;
+    ApplicationStore.state.stage = 1;
   }
 }
 

@@ -2,14 +2,10 @@ import {BaseElement} from "../BaseElement";
 import "./StageSelectSteps.scss";
 
 export class StageSelectSteps extends BaseElement {
-  constructor() {
-    super();
-  }
-
-  getTemplate() {
+  render() {
     return `<label>Steps to win</label>
-<select-steps></select-steps>
-<button is="start-button"></button>`;
+<select is="select-steps"></select>
+<button is="start-button"></button is="start-button">`;
   }
 }
 

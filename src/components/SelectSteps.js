@@ -1,42 +1,27 @@
-import {BaseElement} from "./BaseElement";
+import {settings} from "../settings";
+import {ApplicationStore} from "../lib/store";
 
-const DEFAULT_VALUE = 5;
-const MAX_STEPS = 10;
-
-export class SelectSteps extends BaseElement {
-  constructor(steps = MAX_STEPS) {
+export class SelectSteps extends HTMLSelectElement {
+  constructor() {
     super();
 
-    this.steps = steps;
-  }
-
-  getTemplate() {
-    return `<select class="steps">
-    <slot/>
-</select>`;
-  }
-
-  update() {
-    const select = this.querySelector("select");
-    if (!select)
-      return;
-
-    if (select.children.length === this.steps)
-      return;
-
-    select.innerHTML = "";
-
-    for (let i = 1; i <= this.steps; i++)
-    {
+    this.innerHTML = "";
+    for (let i = 1; i <= settings.MAX_STEPS; i++) {
       const opt = document.createElement("option");
       opt.innerText = opt.value = String(i);
-      if (opt.value === String(DEFAULT_VALUE))
+      if (i === ApplicationStore.state.rounds)
         opt.selected = true;
-
-      select.appendChild(opt);
+      this.appendChild(opt);
     }
+
+    console.log(this);
+    this.addEventListener("change", this.onChange);
+  }
+
+  onChange(e) {
+    ApplicationStore.state.rounds = Number(e.target.value || settings.DEFAULT_STEP);
   }
 }
 
 SelectSteps.componentName = "select-steps";
-customElements.define(SelectSteps.componentName, SelectSteps);
+customElements.define(SelectSteps.componentName, SelectSteps, {extends: "select"});

@@ -1,23 +1,25 @@
+import {ApplicationStore} from "../lib/store";
+
 export class BaseElement extends HTMLElement {
   constructor() {
     super();
+
+    this.render = this.render || function () { };
+
+    this.listenedStates = [];
+    ApplicationStore.eventManager.subscribe("stateChange", (data) => this.onStateChange(data));
   }
 
-  static get me() {
-    const items = document.getElementsByTagName(this.componentName);
-    if (!items || !items.length)
-      throw new Error("Static property 'componentName' is not set!");
+  onStateChange(data) {
+    const {property} = data;
 
-    return items[0];
+    if (!this.listenedStates.includes(property))
+      return;
+
+    this.update();
   }
 
   connectedCallback() {
-    if (this.getTemplate()) {
-      const template = document.createElement("template");
-      template.innerHTML = this.getTemplate();
-      this.appendChild(template.content.cloneNode(true));
-    }
-
     this.update();
   }
 
@@ -25,21 +27,23 @@ export class BaseElement extends HTMLElement {
     this.update();
   }
 
-  attachStyle(styles) {
-    if (!styles)
-      return;
-
-    const style = document.createElement("style");
-    style.textContent = styles;
-    this.shadowRoot.appendChild(style);
-  }
-
-  // Placeholder, helps IDE (and me)
-  getTemplate() {
-    return null;
-  }
-
-  // Placeholder, helps IDE (and me)
   update() {
+    const renderHTML = this.render();
+
+    if (renderHTML instanceof HTMLElement) {
+      this.innerHTML = "";
+      this.appendChild(renderHTML);
+    } else if (renderHTML) {
+      const template = document.createElement("template");
+      template.innerHTML = renderHTML;
+      this.appendChild(template.content.cloneNode(true));
+    }
+  }
+
+  /**
+   * @return {HTMLElement|string|null}
+   */
+  render() {
+    return null;
   }
 }
