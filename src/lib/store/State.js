@@ -1,51 +1,38 @@
 import {settings} from "../../settings";
 
 export class State {
-  // region Board size
-  /**
-   * @return {number} value
-   */
-  get boardSize() {
-    return Number(localStorage.getItem("boardSize")) || settings.GAME_BOARD_SIZE;
+  constructor() {
+    this._boardSize = localStorage.getItem("boardSize");
+    this._rounds = localStorage.getItem("rounds");
+    this._stage = 1;
   }
 
-  /**
-   * @param {number} value
-   */
+  // region Board size
+  get boardSize() {
+    return Number(this._boardSize || settings.GAME_BOARD_SIZE);
+  }
   set boardSize(value) {
+    this._boardSize = value;
     localStorage.setItem("boardSize", String(value));
   }
   // endregion
 
   // region Round count
-  /**
-   * @return {number} value
-   */
   get rounds() {
-    return Number(localStorage.getItem("rounds")) || settings.DEFAULT_STEP;
+    return Number(this._rounds || settings.DEFAULT_STEP);
   }
-
-  /**
-   * @param {number} value
-   */
   set rounds(value) {
     localStorage.setItem("rounds", String(value));
   }
   // endregion
 
-  // region Game stage - Session, resets after refresh
-  /**
-   * @return {number} value
-   */
+  // region Game stage
   get stage() {
-    return Number(sessionStorage.getItem("stage")) || settings.DEFAULT_STEP;
+    return Number(this._stage);
   }
 
-  /**
-   * @param {number} value
-   */
   set stage(value) {
-    sessionStorage.setItem("stage", String(value));
+    this._stage = value;
   }
   // endregion
 }
