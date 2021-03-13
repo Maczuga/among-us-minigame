@@ -11,13 +11,19 @@ export class BoardPlayable extends Board {
 
     EventManager.subscribe("onGameBoxFail", (data) => this.onGameBoxFail(data));
 
-    EventManager.subscribe("onGameBoxFail", () => this.lockButtons(true));
     EventManager.subscribe("onGameFinish", () => this.lockButtons(true));
     EventManager.subscribe("onGamePreviewStart", () => this.lockButtons(true));
     EventManager.subscribe("onGamePreviewEnd", () => this.lockButtons(false));
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    this.lockButtons(true);
+  }
+
   onGameBoxFail() {
+    this.lockButtons(true);
+
     this.classList.add("fail");
     setTimeout(() => {
       this.classList.remove("fail");
