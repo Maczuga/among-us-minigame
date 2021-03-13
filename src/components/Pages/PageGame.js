@@ -1,4 +1,4 @@
-import {EventManager, GameController} from "../../lib";
+import {EventManager, GAME_EVENT_END, GameController} from "../../lib";
 import {BasePage, TaskCompleted} from "../index";
 import "./PageGame.scss";
 
@@ -6,7 +6,7 @@ export class PageGame extends BasePage {
   constructor() {
     super();
 
-    EventManager.subscribe("onGameFinish", () => this.onGameFinish());
+    EventManager.subscribe(GAME_EVENT_END, () => this.onGameEnd());
   }
 
   connectedCallback() {
@@ -17,7 +17,7 @@ export class PageGame extends BasePage {
     }, 500);
   }
 
-  onGameFinish() {
+  onGameEnd() {
     const taskCompleted = new TaskCompleted();
     this.appendChild(taskCompleted);
   }

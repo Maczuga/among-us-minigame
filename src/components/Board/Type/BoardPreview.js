@@ -1,7 +1,7 @@
 import {Board} from "../Board";
 import {GameBoardBaseName} from "../BoardUtils";
 import {BoardItemPreview} from "../Item/BoardItemPreview";
-import {EventManager} from "../../../lib";
+import {EventManager, GAME_EVENT_PREVIEW_BOX_HIGHLIGHT} from "../../../lib";
 import "./BoardPreview.scss";
 
 export class BoardPreview extends Board {
@@ -9,10 +9,10 @@ export class BoardPreview extends Board {
     super();
     this.tag = BoardItemPreview;
 
-    EventManager.subscribe("onGameBoxHighlight", (data) => this.onGameBoxHighlight(data));
+    EventManager.subscribe(GAME_EVENT_PREVIEW_BOX_HIGHLIGHT, (data) => this.onGamePreviewBoxHighlight(data));
   }
 
-  onGameBoxHighlight({point}) {
+  onGamePreviewBoxHighlight({point}) {
     const [x, y] = point;
 
     const boardItem = this.findBoardItem(x, y);

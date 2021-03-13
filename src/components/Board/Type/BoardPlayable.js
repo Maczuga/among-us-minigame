@@ -1,4 +1,4 @@
-import {EventManager, GameController} from "../../../lib";
+import {EventManager, GAME_EVENT_BOX_FAIL, GAME_EVENT_END, GAME_EVENT_PREVIEW_END, GAME_EVENT_PREVIEW_START, GameController} from "../../../lib";
 import {Board} from "../Board";
 import {GameBoardBaseName} from "../BoardUtils";
 import {BoardItemClickable} from "../Item/BoardItemClickable";
@@ -9,11 +9,11 @@ export class BoardPlayable extends Board {
     super();
     this.tag = BoardItemClickable;
 
-    EventManager.subscribe("onGameBoxFail", (data) => this.onGameBoxFail(data));
+    EventManager.subscribe(GAME_EVENT_BOX_FAIL, (data) => this.onGameBoxFail(data));
 
-    EventManager.subscribe("onGameFinish", () => this.lockButtons(true));
-    EventManager.subscribe("onGamePreviewStart", () => this.lockButtons(true));
-    EventManager.subscribe("onGamePreviewEnd", () => this.lockButtons(false));
+    EventManager.subscribe(GAME_EVENT_END, () => this.lockButtons(true));
+    EventManager.subscribe(GAME_EVENT_PREVIEW_START, () => this.lockButtons(true));
+    EventManager.subscribe(GAME_EVENT_PREVIEW_END, () => this.lockButtons(false));
   }
 
   connectedCallback() {
