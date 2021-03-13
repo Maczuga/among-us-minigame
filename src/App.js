@@ -1,4 +1,4 @@
-import {StageContainer, BaseElement, Notifications} from "./components";
+import {PageContainer, BaseElement, Notifications} from "./components";
 
 import "./App.scss";
 
@@ -11,7 +11,7 @@ export class App extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.appendChild(new StageContainer());
+    this.appendChild(new PageContainer());
   }
 
   onError(event) {

@@ -1,9 +1,9 @@
 import {BaseElement} from "../BaseElement";
-import "./StageGame.scss";
 import {EventManager, GameController} from "../../lib";
 import {TaskCompleted} from "../TaskCompleted";
+import "./PageGame.scss";
 
-export class StageGame extends BaseElement {
+export class PageGame extends BaseElement {
   constructor() {
     super();
 
@@ -41,5 +41,5 @@ export class StageGame extends BaseElement {
   }
 }
 
-StageGame.componentName = "stage-game";
-customElements.define(StageGame.componentName, StageGame);
+PageGame.componentName = "page-game";
+customElements.define(PageGame.componentName, PageGame);

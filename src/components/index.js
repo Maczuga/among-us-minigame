@@ -7,9 +7,9 @@ export * from "./Buttons/BaseButton";
 export * from "./Buttons/ResetButton";
 export * from "./Buttons/StartButton";
 
-export * from "./Stages/StageContainer";
-export * from "./Stages/StageSelectSteps";
-export * from "./Stages/StageGame";
+export * from "./Pages/PageContainer";
+export * from "./Pages/PageHome";
+export * from "./Pages/PageGame";
 
 export * from "./Board/BoardContainer";
 export * from "./Board/Board";

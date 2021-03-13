@@ -4,7 +4,9 @@ export class State {
   constructor() {
     this._boardSize = localStorage.getItem("boardSize");
     this._rounds = localStorage.getItem("rounds");
-    this._stage = 1;
+
+    // Session only, no extra get/set is needed
+    this.page = "HOME";
   }
 
   // region Board size
@@ -24,16 +26,6 @@ export class State {
   set rounds(value) {
     this._rounds = value;
     localStorage.setItem("rounds", String(value));
-  }
-  // endregion
-
-  // region Game stage
-  get stage() {
-    return Number(this._stage);
-  }
-
-  set stage(value) {
-    this._stage = value;
   }
   // endregion
 }
