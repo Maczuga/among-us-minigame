@@ -1,0 +1,26 @@
+@mixin second_border() {
+  $second_border_width: $border-width;
+  $spacing_outside: 5px;
+  $spacing: -($second_border_width + $spacing_outside);
+
+  border-width: $border-width - 1px;
+  position: relative;
+  margin: $spacing_outside 0;
+
+  outline: none;
+
+  &:before {
+    content: "";
+
+    position: absolute;
+    top: $spacing;
+    bottom: $spacing;
+    left: $spacing;
+    right: $spacing;
+
+    border-radius: $border-radius;
+    border: $second_border_width $border-style $border-color;
+
+    z-index: -1;
+  }
+}
