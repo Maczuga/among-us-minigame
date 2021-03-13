@@ -1,6 +1,6 @@
 import {BaseElement} from "../BaseElement";
-import {GameBoardBaseName} from "./BoardUtils";
 import {ApplicationState} from "../../lib";
+import {GameBoardBaseName} from "./BoardUtils";
 import "./BoardRow.scss";
 
 export class BoardRow extends BaseElement {
