@@ -10,6 +10,11 @@ export class BoardPlayable extends Board {
     this.tag = BoardItemClickable;
 
     EventManager.subscribe("onGameBoxFail", (data) => this.onGameBoxFail(data));
+
+    EventManager.subscribe("onGameBoxFail", () => this.lockButtons(true));
+    EventManager.subscribe("onGameFinish", () => this.lockButtons(true));
+    EventManager.subscribe("onGamePreviewStart", () => this.lockButtons(true));
+    EventManager.subscribe("onGamePreviewEnd", () => this.lockButtons(false));
   }
 
   onGameBoxFail() {
@@ -20,6 +25,14 @@ export class BoardPlayable extends Board {
         GameController.playPreview();
       }, 500);
     }, 1000);
+  }
+
+  lockButtons(disabled) {
+    const boardItems = this.querySelectorAll(this.tag.componentName);
+    boardItems.forEach(item => {
+      item.disabled = true;
+      item.button.toggleAttribute("disabled", disabled);
+    });
   }
 }
 

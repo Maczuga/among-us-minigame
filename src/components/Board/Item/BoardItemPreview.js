@@ -1,25 +1,32 @@
 import {BoardItem} from "./BoardItem";
 import "./BoardItemPreview.scss";
-import {EventManager} from "../../../lib";
 import {settings} from "../../../settings";
+import {strToBool} from "../../../lib";
 
 export class BoardItemPreview extends BoardItem {
-  constructor(x, y) {
-    super(x, y);
-
-    EventManager.subscribe("onGameBoxHighlight", (data) => this.onBoxHighlight(data));
+  get highlight() {
+    return strToBool(this.getAttribute("highlight"));
   }
 
-  onBoxHighlight({point}) {
-    const [x, y] = point;
+  set highlight(val) {
+    this.setAttribute("highlight", val);
+  }
 
-    if (this.x !== x || this.y !== y)
-      return;
-
-    this.classList.add("highlight");
-    setTimeout(() => {
-      this.classList.remove("highlight");
-    }, settings.HIGHLIGHT_DELAY_MS);
+  static get observedAttributes() { return ["highlight"]; }
+  attributeChangedCallback(name, oldValue, newValue) {
+    switch (name) {
+      case "highlight":
+      {
+        const boolVal = strToBool(newValue);
+        this.classList.toggle("highlight", boolVal);
+        if (boolVal === true) {
+          setTimeout(() => {
+            this.highlight = false;
+          }, settings.HIGHLIGHT_DELAY_MS);
+        }
+        break;
+      }
+    }
   }
 }
 

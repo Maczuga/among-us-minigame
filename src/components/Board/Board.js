@@ -20,6 +20,10 @@ export class Board extends BaseElement {
     }
   }
 
+  findBoardItem(x, y) {
+    return this.querySelector(`${this.tag.componentName}[x="${x}"][y="${y}"]`);
+  }
+
   update() {
     this.generateGrid();
   }

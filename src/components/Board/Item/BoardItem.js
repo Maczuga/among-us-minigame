@@ -8,6 +8,22 @@ export class BoardItem extends BaseElement {
     this.x = x;
     this.y = y;
   }
+
+  get x() {
+    return Number(this.getAttribute("x"));
+  }
+
+  set x(val) {
+    this.setAttribute("x", val);
+  }
+
+  get y() {
+    return Number(this.getAttribute("y"));
+  }
+
+  set y(val) {
+    this.setAttribute("y", val);
+  }
 }
 
 BoardItem.componentName = `${GameBoardBaseName}-item`;

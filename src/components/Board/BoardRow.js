@@ -4,10 +4,6 @@ import "./BoardRow.scss";
 import {settings} from "../../settings";
 
 export class BoardRow extends BaseElement {
-  static get observedAttributes() {
-    return ["y"];
-  }
-
   constructor(y, cellTag) {
     super();
 

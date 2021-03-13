@@ -4,7 +4,7 @@ export class BaseElement extends HTMLElement {
   constructor() {
     super();
 
-    this.render = this.render || function () { };
+    this.render = this.render || function () {};
 
     this.listenedStates = [];
     EventManager.subscribe("stateChange", (data) => this.onStateChange(data));
@@ -27,6 +27,9 @@ export class BaseElement extends HTMLElement {
     this.update();
   }
 
+  /**
+   * Renders all HTML content. Place here all event handlers for rendered components.
+   */
   update() {
     const renderHTML = this.render();
 
