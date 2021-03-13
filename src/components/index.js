@@ -1,15 +1,21 @@
 export * from "./BaseElement";
-export * from "./SelectSteps";
+export * from "./BasePage";
+
 export * from "./TaskCompleted";
 export * from "./StarBackground";
 
+export * from "./Selects/SelectBoardSize";
+export * from "./Selects/SelectSteps";
+
 export * from "./Buttons/BaseButton";
+export * from "./Buttons/BackButton";
 export * from "./Buttons/ResetButton";
 export * from "./Buttons/StartButton";
+export * from "./Buttons/OptionsButton";
 
-export * from "./Pages/PageContainer";
 export * from "./Pages/PageHome";
 export * from "./Pages/PageGame";
+export * from "./Pages/PageOptions";
 
 export * from "./Board/BoardContainer";
 export * from "./Board/Board";

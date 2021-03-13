@@ -1,12 +1,14 @@
+@import "/src/scss/variables";
 page-home {
   .main-menu {
     display: flex;
     flex-direction: column;
+    text-align: center;
 
     min-width: 200px;
+  }
 
-    select {
-      margin-bottom: 1rem;
-    }
+  .bottom-row {
+    margin-top: 1.5rem;
   }
 }

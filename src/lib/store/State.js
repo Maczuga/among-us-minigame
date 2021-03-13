@@ -11,7 +11,7 @@ export class State {
 
   // region Board size
   get boardSize() {
-    return Number(this._boardSize || settings.GAME_BOARD_SIZE);
+    return Number(this._boardSize || settings.DEFAULT_BOARD_SIZE);
   }
   set boardSize(value) {
     this._boardSize = value;

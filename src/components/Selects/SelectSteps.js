@@ -1,5 +1,5 @@
-import {settings} from "../settings";
-import {ApplicationStore} from "../lib";
+import {settings} from "../../settings";
+import {ApplicationStore} from "../../lib";
 
 export class SelectSteps extends HTMLSelectElement {
   constructor() {
@@ -11,7 +11,7 @@ export class SelectSteps extends HTMLSelectElement {
       opt.innerText = opt.value = String(i);
       if (i === ApplicationStore.state.rounds)
         opt.selected = true;
-      this.appendChild(opt);
+      this.append(opt);
     }
 
     this.addEventListener("change", this.onChange);

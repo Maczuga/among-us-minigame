@@ -1,0 +1,9 @@
+.page {
+  // Slide up
+  transition: transform .2s ease;
+  transform: none;
+
+  &.hidden {
+    transform: translateY(100vh);
+  }
+}

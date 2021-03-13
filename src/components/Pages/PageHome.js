@@ -1,12 +1,17 @@
-import {BaseElement} from "../BaseElement";
+import {BasePage} from "../BasePage";
 import "./PageHome.scss";
 
-export class PageHome extends BaseElement {
+export class PageHome extends BasePage {
   render() {
     return `<div class="main-menu">
-  <label>Steps to win</label>
-  <select is="select-steps"></select>
-  <button is="start-button"></button is="start-button">
+  <div class="form-group">
+    <label>Steps to win</label>
+    <select is="select-steps"></select>
+  </div>
+  <button is="start-button"></button>
+</div>
+<div class="bottom-row button-row">
+  <button is="options-button"></button>
 </div>`;
   }
 }

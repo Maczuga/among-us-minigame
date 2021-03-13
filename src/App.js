@@ -1,17 +1,29 @@
-import {PageContainer, BaseElement, Notifications} from "./components";
+import {BaseElement, Notifications, PageHome, PageGame, PageOptions} from "./components";
 
 import "./App.scss";
+import {ApplicationStore, PAGE_GAME, PAGE_HOME, PAGE_OPTIONS} from "./lib";
 
 export class App extends BaseElement {
   constructor() {
     super();
 
+    this.listenedStates = ["page"];
+    ApplicationStore.state.page = PAGE_HOME;
+
     window.addEventListener("error", (event) => this.onError(event));
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    this.appendChild(new PageContainer());
+  render() {
+    if (ApplicationStore.state.page === PAGE_HOME)
+      return new PageHome();
+
+    if (ApplicationStore.state.page === PAGE_GAME)
+      return new PageGame();
+
+    if (ApplicationStore.state.page === PAGE_OPTIONS)
+      return new PageOptions();
+
+    return "";
   }
 
   onError(event) {

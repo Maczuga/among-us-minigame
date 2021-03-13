@@ -5,13 +5,6 @@ page-game {
   text-align: center;
   display: block;
 
-  // Slide up
-  transform: translateY(100vh);
-  transition: transform .2s ease;
-  &.shown {
-    transform: none;
-  }
-
   .preview {
     width: 50%;
     background-color: $preview-bg-color;

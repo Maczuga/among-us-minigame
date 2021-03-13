@@ -1,0 +1,13 @@
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  button.btn {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: .4rem .75rem;
+    font-size: $font-size-sm;
+  }
+}

@@ -33,8 +33,10 @@ export class BaseElement extends HTMLElement {
   update() {
     const renderHTML = this.render();
 
-    if (renderHTML instanceof HTMLElement) {
+    if (renderHTML)
       this.innerHTML = "";
+
+    if (renderHTML instanceof HTMLElement) {
       this.appendChild(renderHTML);
     } else if (renderHTML) {
       const template = document.createElement("template");

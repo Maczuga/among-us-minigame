@@ -1,9 +1,8 @@
-import {BaseElement} from "../BaseElement";
 import {EventManager, GameController} from "../../lib";
-import {TaskCompleted} from "../TaskCompleted";
+import {BasePage, TaskCompleted} from "../index";
 import "./PageGame.scss";
 
-export class PageGame extends BaseElement {
+export class PageGame extends BasePage {
   constructor() {
     super();
 
@@ -12,10 +11,6 @@ export class PageGame extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-
-    setTimeout(() => {
-      this.classList.add("shown");
-    }, 100);
 
     setTimeout(() => {
       GameController.start();
@@ -37,7 +32,10 @@ export class PageGame extends BaseElement {
     <game-board-playable></game-board-playable>
   </game-board-container>
 </div>
-<button is="reset-button"></button>`;
+<div class="button-row">
+    <button is="back-button"></button>
+    <button is="reset-button"></button>
+</div>`;
   }
 }
 
