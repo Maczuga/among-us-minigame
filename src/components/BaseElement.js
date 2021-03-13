@@ -1,4 +1,4 @@
-import {EventManager} from "../lib";
+import {APP_EVENT_STATE_UPDATE, EventManager} from "../lib";
 
 export class BaseElement extends HTMLElement {
   constructor() {
@@ -7,7 +7,7 @@ export class BaseElement extends HTMLElement {
     this.render = this.render || function () {};
 
     this.listenedStates = [];
-    EventManager.subscribe("stateChange", (data) => this.onStateChange(data));
+    EventManager.subscribe(APP_EVENT_STATE_UPDATE, (data) => this.onStateChange(data));
   }
 
   onStateChange(data) {

@@ -1,4 +1,4 @@
-import {ApplicationStore, PAGE_OPTIONS} from "../../lib";
+import {ApplicationState, PAGE_OPTIONS} from "../../lib";
 import {BaseButton} from "./BaseButton";
 
 export class OptionsButton extends BaseButton {
@@ -10,7 +10,7 @@ export class OptionsButton extends BaseButton {
   }
 
   onClick() {
-    ApplicationStore.state.page = PAGE_OPTIONS;
+    ApplicationState.page = PAGE_OPTIONS;
   }
 }
 

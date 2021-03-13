@@ -1,5 +1,5 @@
 import {settings} from "../../settings";
-import {ApplicationStore} from "../../lib";
+import {ApplicationState} from "../../lib";
 
 export class SelectBoardSize extends HTMLSelectElement {
   constructor() {
@@ -9,7 +9,7 @@ export class SelectBoardSize extends HTMLSelectElement {
     for (let i = settings.MIN_BOARD_SIZE; i <= settings.MAX_BOARD_SIZE; i++) {
       const opt = document.createElement("option");
       opt.innerText = opt.value = String(i);
-      if (i === ApplicationStore.state.boardSize)
+      if (i === ApplicationState.boardSize)
         opt.selected = true;
       this.append(opt);
     }
@@ -18,7 +18,7 @@ export class SelectBoardSize extends HTMLSelectElement {
   }
 
   onChange(e) {
-    ApplicationStore.state.boardSize = e.target.value;
+    ApplicationState.boardSize = e.target.value;
   }
 }
 

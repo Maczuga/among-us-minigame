@@ -6,3 +6,5 @@ export const GAME_EVENT_PREVIEW_BOX_HIGHLIGHT = "onGamePreviewBoxHighlight";
 export const GAME_EVENT_BOX_CLICK = "onGameBoxClick";
 export const GAME_EVENT_BOX_FAIL = "onGameBoxFail";
 export const GAME_EVENT_BOX_VALIDATED = "onGameBoxValidated";
+
+export const APP_EVENT_STATE_UPDATE = "onStateChange";

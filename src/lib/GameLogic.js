@@ -1,8 +1,8 @@
 import {settings} from "../settings";
-import {ApplicationStore} from "./store/Store";
 import {random} from "./utils";
 import {EventManager} from "./EventManager";
 import {GAME_EVENT_BOX_CLICK, GAME_EVENT_BOX_FAIL, GAME_EVENT_BOX_VALIDATED, GAME_EVENT_END, GAME_EVENT_PREVIEW_BOX_HIGHLIGHT, GAME_EVENT_PREVIEW_END, GAME_EVENT_PREVIEW_START, GAME_EVENT_START} from "./constants";
+import {ApplicationState} from "./store/Store";
 
 class GameLogic {
   constructor() {
@@ -96,12 +96,12 @@ class GameLogic {
 
   // region Utils
   isMaxGenerated() {
-    const max = ApplicationStore.state.rounds;
+    const max = ApplicationState.rounds;
     return this.spots.length >= max;
   }
 
   randomNumberInBoardRange() {
-    return random(0, ApplicationStore.state.boardSize - 1);
+    return random(0, ApplicationState.boardSize - 1);
   }
 
   randomSpot() {

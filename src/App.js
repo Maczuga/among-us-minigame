@@ -1,7 +1,6 @@
 import {BaseElement, Notifications, PageHome, PageGame, PageOptions} from "./components";
-
+import {ApplicationState, PAGE_GAME, PAGE_HOME, PAGE_OPTIONS} from "./lib";
 import "./App.scss";
-import {ApplicationStore, PAGE_GAME, PAGE_HOME, PAGE_OPTIONS} from "./lib";
 
 export class App extends BaseElement {
   constructor() {
@@ -12,13 +11,13 @@ export class App extends BaseElement {
   }
 
   render() {
-    if (ApplicationStore.state.page === PAGE_HOME)
+    if (ApplicationState.page === PAGE_HOME)
       return new PageHome();
 
-    if (ApplicationStore.state.page === PAGE_GAME)
+    if (ApplicationState.page === PAGE_GAME)
       return new PageGame();
 
-    if (ApplicationStore.state.page === PAGE_OPTIONS)
+    if (ApplicationState.page === PAGE_OPTIONS)
       return new PageOptions();
 
     return "";

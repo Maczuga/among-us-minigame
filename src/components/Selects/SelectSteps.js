@@ -1,5 +1,5 @@
 import {settings} from "../../settings";
-import {ApplicationStore} from "../../lib";
+import {ApplicationState} from "../../lib";
 
 export class SelectSteps extends HTMLSelectElement {
   constructor() {
@@ -9,7 +9,7 @@ export class SelectSteps extends HTMLSelectElement {
     for (let i = 1; i <= settings.MAX_STEPS; i++) {
       const opt = document.createElement("option");
       opt.innerText = opt.value = String(i);
-      if (i === ApplicationStore.state.rounds)
+      if (i === ApplicationState.rounds)
         opt.selected = true;
       this.append(opt);
     }
@@ -18,7 +18,7 @@ export class SelectSteps extends HTMLSelectElement {
   }
 
   onChange(e) {
-    ApplicationStore.state.rounds = e.target.value;
+    ApplicationState.rounds = e.target.value;
   }
 }
 

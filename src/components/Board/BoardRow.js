@@ -1,6 +1,6 @@
 import {BaseElement} from "../BaseElement";
-import {ApplicationStore} from "../../lib";
 import {GameBoardBaseName} from "./BoardUtils";
+import {ApplicationState} from "../../lib";
 import "./BoardRow.scss";
 
 export class BoardRow extends BaseElement {
@@ -12,7 +12,7 @@ export class BoardRow extends BaseElement {
   }
 
   generateRow() {
-    for (let x = 0; x < ApplicationStore.state.boardSize; x++) {
+    for (let x = 0; x < ApplicationState.boardSize; x++) {
       this.appendChild(new this.cellTag(x, this.y));
     }
   }

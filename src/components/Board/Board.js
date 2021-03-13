@@ -1,5 +1,5 @@
 import {BaseElement} from "../BaseElement";
-import {ApplicationStore} from "../../lib";
+import {ApplicationState} from "../../lib";
 import {BoardRow} from "./BoardRow";
 import {GameBoardBaseName} from "./BoardUtils";
 import "./Board.scss";
@@ -15,7 +15,7 @@ export class Board extends BaseElement {
     if (!cellTag)
       throw new Error("this.tag property is missing!");
 
-    for (let y = 0; y < ApplicationStore.state.boardSize; y++) {
+    for (let y = 0; y < ApplicationState.boardSize; y++) {
       this.appendChild(new BoardRow(y, cellTag));
     }
   }
