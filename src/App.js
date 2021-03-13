@@ -8,8 +8,6 @@ export class App extends BaseElement {
     super();
 
     this.listenedStates = ["page"];
-    ApplicationStore.state.page = PAGE_HOME;
-
     window.addEventListener("error", (event) => this.onError(event));
   }
 

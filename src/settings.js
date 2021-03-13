@@ -6,5 +6,8 @@ export const settings = {
   DEFAULT_STEP: 5,
   MAX_STEPS: 10,
 
-  HIGHLIGHT_DELAY_MS: 500
+  HIGHLIGHT_DELAY_MS: 500,
+
+  // Debug purposes
+  DEFAULT_PAGE: "GAME",
 };

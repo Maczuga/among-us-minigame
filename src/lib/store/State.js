@@ -6,7 +6,7 @@ export class State {
     this._rounds = localStorage.getItem("rounds");
 
     // Session only, no extra get/set is needed
-    this.page = "HOME";
+    this.page = settings.DEFAULT_PAGE;
   }
 
   // region Board size
