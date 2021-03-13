@@ -1,0 +1,11 @@
+@import "/src/scss/variables";
+
+notification-container {
+  $spacing: 1rem;
+
+  position: fixed;
+  top: $spacing;
+  right: $spacing;
+  max-width: 100%;
+  margin-left: $spacing;
+}

@@ -19,3 +19,7 @@ export * from "./Board/Type/BoardPreview";
 export * from "./Board/Item/BoardItem";
 export * from "./Board/Item/BoardItemClickable";
 export * from "./Board/Item/BoardItemPreview";
+
+export * from "./Notifications/Notifications";
+export * from "./Notifications/NotificationItem";
+

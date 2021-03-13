@@ -1,0 +1,61 @@
+@import "/src/scss/variables";
+
+notification-item {
+  border: $border;
+  border-radius: $border-radius;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+
+  @include second_border();
+
+  &.error {
+    background-color: rgba(#bb1000, .75);
+  }
+  &.success {
+    background-color: rgba(#13BB00, .75);
+  }
+  &.info {
+    background-color: rgba(#00ABBB, .75);
+  }
+  .top {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 3px solid $border-color;
+  }
+
+  .close {
+    $close-spacing: .5rem;
+
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding: $close-spacing;
+    margin: (-$close-spacing) (-$close-spacing) (-$close-spacing) auto;
+    color: $body-color;
+    font-size: $font-size-base;
+    &:hover, &:focus {
+      outline: none;
+      color: darken($body-color, 10%)
+    }
+  }
+
+  .title {
+    font-weight: bolder;
+    font-size: $font-size-base;
+  }
+
+  .message {
+    font-size: $font-size-sm;
+  }
+
+  // Not used, doesn't really match
+  transition: transform 0.2s ease-out;
+  &.hide {
+    transform: translateX(110%);
+  }
+}
