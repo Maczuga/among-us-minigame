@@ -1,4 +1,4 @@
-import {EventManager, GAME_EVENT_BOX_FAIL, GAME_EVENT_BOX_VALIDATED, GAME_EVENT_END, GAME_EVENT_PREVIEW_END, GAME_EVENT_PREVIEW_START, GAME_EVENT_ROUND_START, GAME_EVENT_START, GameController} from "../../../lib";
+import {EventManager, GAME_EVENT_BOX_FAIL, GAME_EVENT_BOX_VALIDATED, GAME_EVENT_END, GAME_EVENT_PREVIEW_END, GAME_EVENT_PREVIEW_START, GAME_EVENT_ROUND_START, GAME_EVENT_START} from "../../../lib";
 import {Board} from "../Board";
 import {GameBoardBaseName} from "../BoardUtils";
 import {BoardItemClickable} from "../Item/BoardItemClickable";
@@ -49,14 +49,7 @@ export class BoardPlayable extends Board {
 
   onBoxFail() {
     this.lockButtons(true);
-
-    this.classList.add("fail");
-    setTimeout(() => {
-      this.classList.remove("fail");
-      setTimeout(() => {
-        GameController.playPreview();
-      }, 500);
-    }, 1000);
+    this.parentElement.fail = true;
   }
 
   onBoxValidated({clickCount, result}) {

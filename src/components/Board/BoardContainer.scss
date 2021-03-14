@@ -13,4 +13,21 @@ game-board-container {
   overflow: hidden;
   //width: 10px;
   //height: 10px;
+
+  &.fail {
+    game-board-stage-dot,
+    game-board-playable game-board-item-clickable button {
+      animation: bg-change 1s  step-end;
+    }
+  }
+}
+
+@keyframes bg-change {
+  25%, 75% {
+    background-color: initial;
+  }
+
+  0%, 50%, 100% {
+    background-color: rgba($error, 1);
+  }
 }
