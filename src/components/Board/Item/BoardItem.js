@@ -5,8 +5,16 @@ import "./BoardItem.scss";
 export class BoardItem extends BaseElement {
   constructor(x, y) {
     super();
+
+    if (x < 0 || x === undefined)
+      throw new Error("Invalid BoardItem x coordinate");
+    if (y < 0 || y === undefined)
+      throw new Error("Invalid BoardItem y coordinate");
+
     this.x = x;
     this.y = y;
+
+    this.classList.add(BoardItem.componentName);
   }
 
   get x() {

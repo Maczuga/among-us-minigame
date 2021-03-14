@@ -1,7 +1,12 @@
+@import "./mixins/breakpoints";
 @import "./mixins/second_border";
 
-$primary: #000;
-$secondary: #fff;
+//$primary: #000;
+//$secondary: #fff;
+
+$error: #bb1000;
+$success: #13BB00;
+$info: #00ABBB;
 
 $body-bg: #000;
 $body-color: #fff;
@@ -33,3 +38,4 @@ $font-weight-bold: 700;
 //endregion
 
 $outline: none;
+

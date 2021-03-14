@@ -10,13 +10,13 @@ notification-item {
   @include second_border();
 
   &.error {
-    background-color: rgba(#bb1000, .75);
+    background-color: rgba($error, .75);
   }
   &.success {
-    background-color: rgba(#13BB00, .75);
+    background-color: rgba($success, .75);
   }
   &.info {
-    background-color: rgba(#00ABBB, .75);
+    background-color: rgba($info, .75);
   }
   .top {
     display: flex;

@@ -9,5 +9,5 @@ export const settings = {
   HIGHLIGHT_DELAY_MS: 500,
 
   // Debug purposes
-  DEFAULT_PAGE: "GAME",
+  DEFAULT_PAGE: "HOME",
 };

@@ -36,13 +36,13 @@ class GameLogic {
     }
 
     this.round++;
-    this.clickCount = 0;
 
     this.generatePoint();
     this.playPreview();
   }
 
   playPreview() {
+    this.clickCount = 0;
     EventManager.publish(GAME_EVENT_PREVIEW_START);
 
     let i = 0;
@@ -63,7 +63,7 @@ class GameLogic {
   onBoxClick(x, y) {
     EventManager.publish(GAME_EVENT_BOX_CLICK, {point: [x, y]});
     const result = this.validateClick(x, y);
-    EventManager.publish(GAME_EVENT_BOX_VALIDATED, {result, point: [x, y]});
+    EventManager.publish(GAME_EVENT_BOX_VALIDATED, {result, clickCount: this.clickCount, point: [x, y]});
 
     if (result)
       this.clickCount++;
