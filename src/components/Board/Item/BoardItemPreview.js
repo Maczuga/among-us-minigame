@@ -1,7 +1,7 @@
-import {BoardItem} from "./BoardItem";
-import "./BoardItemPreview.scss";
 import {settings} from "../../../settings";
 import {strToBool} from "../../../lib";
+import {BoardItem} from "./BoardItem";
+import "./BoardItemPreview.scss";
 
 export class BoardItemPreview extends BoardItem {
   get highlight() {

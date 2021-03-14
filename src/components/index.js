@@ -19,6 +19,7 @@ export * from "./Pages/PageOptions";
 
 export * from "./Board/BoardContainer";
 export * from "./Board/Board";
+export * from "./Board/BoardRow";
 export * from "./Board/BoardStageContainer";
 export * from "./Board/BoardStageDot";
 export * from "./Board/Type/BoardPlayable";

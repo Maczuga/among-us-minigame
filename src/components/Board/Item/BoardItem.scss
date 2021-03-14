@@ -1,8 +1,10 @@
-@import "variables";
+@import "../variables";
 
 .game-board-item {
-  display: block;
   border-radius: $board-item-border-radius;
-  padding-top: 100%;
   position: relative;
+
+  margin: $board-item-gap;
+  display: flex;
+  flex-grow: 1;
 }

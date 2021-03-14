@@ -1,4 +1,4 @@
-@import "variables";
+@import "src/components/Board/variables";
 game-board-item-preview {
   &.highlight {
     background-color: $board-item-highlight-color;

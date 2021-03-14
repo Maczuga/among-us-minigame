@@ -1,5 +1,5 @@
 import {EventManager, GAME_EVENT_END, GameController} from "../../lib";
-import {BasePage, TaskCompleted} from "../index";
+import {BasePage, BoardContainer, TaskCompleted} from "../index";
 import "./PageGame.scss";
 
 export class PageGame extends BasePage {
@@ -20,6 +20,29 @@ export class PageGame extends BasePage {
   onGameEnd() {
     const taskCompleted = new TaskCompleted();
     this.appendChild(taskCompleted);
+  }
+
+  update() {
+    super.update();
+
+    this.makeBoardSquare();
+    window.addEventListener("makeBoardSquare", () => this.makeBoardSquare());
+  }
+
+  makeBoardSquare() {
+    const {clientHeight, clientWidth} = this.querySelector(".boards");
+
+    // Divide width by 2, because there are 2 elements horizontally placed
+    const min = Math.min(clientWidth / 2, clientHeight);
+
+    const containers = this.querySelectorAll(BoardContainer.componentName);
+    console.log(containers);
+    containers.forEach(container => {
+      delete container.style.width;
+      delete container.style.height;
+
+      container.style.width = container.style.height = `${min}px`;
+    });
   }
 
   render() {

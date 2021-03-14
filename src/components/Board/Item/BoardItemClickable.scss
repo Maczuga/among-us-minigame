@@ -1,5 +1,5 @@
 @import "/src/scss/variables";
-@import "variables";
+@import "../variables";
 
 $board-item-button-border-color: #1d1d1d;
 $board-item-button-background: #d0d0d0; // Taken from in-game screenshot
@@ -8,12 +8,6 @@ $board-item-button-border-width: 3px;
 game-board-item-clickable {
   button {
     -webkit-appearance: none;
-
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
     border: 1px solid rgba($board-item-button-border-color, .5);
     display: block;

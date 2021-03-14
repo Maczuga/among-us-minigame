@@ -5,8 +5,7 @@ $board-spacing: 5px;
 }
 
 .game-board {
-  display: grid;
-  grid-gap: $board-spacing;
-  grid-template-columns: repeat(var(--boardColumns), 1fr);
-  padding: $board-spacing;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
