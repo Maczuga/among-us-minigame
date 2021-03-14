@@ -23,11 +23,31 @@ body {
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  //width: 100%;
+  //height: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 #root {
   flex: 1;
+  overflow: hidden;
 }
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+label {
+  margin-bottom: .25rem;
+}
+
 

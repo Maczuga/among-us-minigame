@@ -1,18 +1,12 @@
 $board-spacing: 5px;
 
 :root {
-  --boardWidth: 1px; // Placeholder, updated in JS
-  --boardGutter: 5px; // SCSS variables does not work in css vars :(
-  --boardColumns: 5;
-  --boardGutters: calc(var(--boardColumns) - 1);
-  --boardRowHeight: calc(( (var(--boardWidth) - (var(--boardGutters) * var(--boardGutter)))
-  / var(--boardColumns)));
+  --boardColumns: 4;
 }
 
 .game-board {
   display: grid;
-  grid-gap: var(--boardGutter);
+  grid-gap: $board-spacing;
   grid-template-columns: repeat(var(--boardColumns), 1fr);
-  grid-auto-rows: minmax(var(--boardRowHeight), auto);
   padding: $board-spacing;
 }

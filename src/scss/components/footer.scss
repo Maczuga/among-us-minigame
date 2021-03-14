@@ -1,0 +1,9 @@
+footer {
+  padding: .5rem .25rem;
+  text-align: center;
+
+  @include media-breakpoint-down(md) {
+    font-size: .75rem;
+    padding: .4rem .1rem;
+  }
+}

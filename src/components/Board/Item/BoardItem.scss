@@ -3,4 +3,6 @@
 .game-board-item {
   display: block;
   border-radius: $board-item-border-radius;
+  padding-top: 100%;
+  position: relative;
 }

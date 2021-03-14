@@ -9,5 +9,10 @@
     margin-right: 1rem;
     padding: .4rem .75rem;
     font-size: $font-size-sm;
+
+    @include media-breakpoint-down(sm) {
+      padding: .2rem .5rem;
+      font-size: $font-size-xs;
+    }
   }
 }

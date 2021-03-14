@@ -1,7 +1,10 @@
+@import "/src/scss/variables";
+
 $preview-bg-color: #000;
 
 page-game {
   width: 100%;
+
   text-align: center;
   display: block;
 
@@ -16,8 +19,17 @@ page-game {
   }
 
   .boards {
-    justify-content: center;
+    display: flex;
     align-items: center;
-    margin: 1rem 0;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+
+    margin: 0 0 1rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: .5rem;
+    }
   }
 }

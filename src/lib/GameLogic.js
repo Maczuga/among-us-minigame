@@ -19,6 +19,8 @@ class GameLogic {
     this.reset();
     EventManager.publish(GAME_EVENT_START);
 
+    document.documentElement.style.setProperty("--boardColumns", String(ApplicationState.boardSize));
+
     this.nextRound();
   }
 

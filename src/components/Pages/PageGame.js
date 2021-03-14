@@ -24,7 +24,7 @@ export class PageGame extends BasePage {
 
   render() {
     return `
-<div class="row boards">
+<div class="boards">
   <game-board-container>
     <game-board-stage-container></game-board-stage-container>
     <game-board-preview></game-board-preview>

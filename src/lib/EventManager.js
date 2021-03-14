@@ -20,6 +20,14 @@ class EventHandler {
 
     this.events[event].push(callback);
   }
+
+  unsubscribe(event, callback) {
+    if (!this.eventExists(event))
+      return;
+
+    // TODO
+    // this.events[event].push(callback);
+  }
 }
 
 export const EventManager = new EventHandler();
