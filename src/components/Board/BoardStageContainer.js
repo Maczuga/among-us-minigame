@@ -12,10 +12,10 @@ export class BoardStageContainer extends BaseElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.generateDots();
+    this.regenerateDots();
   }
 
-  generateDots() {
+  regenerateDots() {
     this.innerHTML = "";
     for (let i = 0; i < ApplicationState.rounds; i++) {
       this.appendChild(new BoardStageDot(i));
@@ -27,7 +27,17 @@ export class BoardStageContainer extends BaseElement {
     if (!dot)
       return;
 
-    dot.status = success ? BoardStageDotStatus.OK : BoardStageDotStatus.FAIL;
+    switch (success) {
+      case true:
+        dot.status = BoardStageDotStatus.OK;
+        break;
+      case false:
+        dot.status = BoardStageDotStatus.FAIL;
+        break;
+      default:
+        dot.status = undefined;
+        break;
+    }
   }
 }
 

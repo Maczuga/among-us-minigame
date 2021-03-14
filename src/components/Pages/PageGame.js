@@ -11,10 +11,7 @@ export class PageGame extends BasePage {
 
   connectedCallback() {
     super.connectedCallback();
-
-    setTimeout(() => {
-      GameController.start();
-    }, 500);
+    GameController.startGame();
   }
 
   onGameEnd() {
@@ -36,7 +33,6 @@ export class PageGame extends BasePage {
     const min = Math.min(clientWidth / 2, clientHeight);
 
     const containers = this.querySelectorAll(BoardContainer.componentName);
-    console.log(containers);
     containers.forEach(container => {
       delete container.style.width;
       delete container.style.height;

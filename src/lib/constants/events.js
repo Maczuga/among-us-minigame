@@ -1,5 +1,7 @@
 export const GAME_EVENT_START = "onGameStart";
 export const GAME_EVENT_END = "onGameEnd";
+export const GAME_EVENT_ROUND_START = "onGameRoundStart";
+export const GAME_EVENT_ROUND_END = "onGameRoundEnd";
 export const GAME_EVENT_PREVIEW_START = "onGamePreviewStart";
 export const GAME_EVENT_PREVIEW_END = "onGamePreviewEnd";
 export const GAME_EVENT_PREVIEW_BOX_HIGHLIGHT = "onGamePreviewBoxHighlight";

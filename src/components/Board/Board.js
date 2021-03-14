@@ -21,6 +21,10 @@ export class Board extends BaseElement {
     }
   }
 
+  update() {
+    this.generateGrid();
+  }
+
   findBoardItem(x, y) {
     return this.querySelector(`${this.tag.componentName}[x="${x}"][y="${y}"]`);
   }
@@ -29,8 +33,20 @@ export class Board extends BaseElement {
     return this.parentElement.querySelector(`${BoardStageContainer.componentName}`);
   }
 
-  update() {
-    this.generateGrid();
+  regenerateDots() {
+    const dotContainer = this.findDotContainer();
+    if (!dotContainer)
+      return;
+
+    dotContainer.regenerateDots();
+  }
+
+  highlightDot(index, success) {
+    const dotContainer = this.findDotContainer();
+    if (!dotContainer)
+      return;
+
+    dotContainer.highlight(index, success);
   }
 }
 

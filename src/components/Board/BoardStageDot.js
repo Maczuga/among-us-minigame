@@ -34,7 +34,8 @@ export class BoardStageDot extends BaseElement {
     switch (name) {
       case "status":
         this.classList.remove(oldValue);
-        this.classList.add(newValue);
+        if (newValue)
+          this.classList.add(newValue);
         break;
     }
   }

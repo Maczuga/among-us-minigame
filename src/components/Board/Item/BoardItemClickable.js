@@ -26,7 +26,7 @@ export class BoardItemClickable extends BoardItem {
       return;
 
     const {x, y} = this;
-    GameController.onBoxClick(x, y);
+    GameController.clickGameItem(x, y);
 
     this.button.blur();
   }

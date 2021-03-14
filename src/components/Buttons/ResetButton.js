@@ -10,8 +10,7 @@ export class ResetButton extends BaseButton {
   }
 
   resetGame() {
-    GameController.reset();
-    GameController.start();
+    GameController.startGame();
   }
 }
 
