@@ -9,13 +9,13 @@ game-board-item-clickable {
   button {
     -webkit-appearance: none;
 
-    border: 1px solid rgba($board-item-button-border-color, .5);
+    border-radius: 5%;
+    border: .35em solid rgba($board-item-button-border-color, .9);
     display: block;
     cursor: pointer;
 
     // This combined with box-shadow em sizes gives nice scalable shadow.
-    box-shadow: inset 0 0 1em .5em rgba($board-item-button-border-color, .5);
-    border-radius: $board-item-border-radius;
+    box-shadow: inset 0 0 .75em 1.5em rgba($board-item-button-border-color, .3), .25em 1em 0.5em 0.1em rgba(#000, .25);
     background-color: $board-item-button-background; // Taken from in-game screenshot
 
     width: 100%;

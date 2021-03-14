@@ -5,9 +5,8 @@ game-board-stage-dot {
   height: 2.5em;
   border-radius: 50%;
   background-color: #6a6a6a;
-  border: $border;
-  border-color: rgba(#000, .5);
-  box-shadow: 0 0 .5em 1em inset rgba(#222222, .5);
+  border: .25em solid rgba(#000, .75);
+  box-shadow: 0 0 .5em 1em inset rgba(#222222, .5), 0.2em 0.75em 0.25em 0.03em rgba(#000, .25);
 
   &[status="OK"] {
     background-color: $success;

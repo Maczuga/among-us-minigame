@@ -23,7 +23,7 @@ export class PageGame extends BasePage {
     super.update();
 
     this.makeBoardSquare();
-    window.addEventListener("makeBoardSquare", () => this.makeBoardSquare());
+    window.addEventListener("resize", () => this.makeBoardSquare());
   }
 
   makeBoardSquare() {
@@ -31,6 +31,8 @@ export class PageGame extends BasePage {
 
     // Divide width by 2, because there are 2 elements horizontally placed
     const min = Math.min(clientWidth / 2, clientHeight);
+
+    console.log(clientWidth / 2, clientHeight);
 
     const containers = this.querySelectorAll(BoardContainer.componentName);
     containers.forEach(container => {
