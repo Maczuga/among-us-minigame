@@ -6,6 +6,8 @@ Totally not an Among Us copy
 - Layout was based on Among Us game
 
 ## How to run
+TLDR: `yarn install && yarn run build && yarn run start`
+
 Before you can run the app you have to build it first using `build` command with either `yarn` or `npm`.
 
 There are 2 ways to run this application once built:
