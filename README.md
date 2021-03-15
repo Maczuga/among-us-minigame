@@ -1,8 +1,6 @@
 # Memory mini-game
 Totally not an Among Us copy
 
-Supported browsers: https://caniuse.com/custom-elementsv1
-
 ## Few notes
 - IE 11 is parially supported due to polyfills, however it's buggy.
 - Layout was based on Among Us game
