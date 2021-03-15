@@ -6,10 +6,21 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "http-server dist -p 8090 -o index.html"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "@ungap/custom-elements": "^0.1.15",
+    "proxy-polyfill": "^0.3.2",
+    "@babel/runtime": "^7.13.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.10",
     "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.1.2",
     "eslint": "^7.21.0",
     "eslint-plugin-import": "^2.22.1",
@@ -25,7 +36,6 @@
     "postcss-loader": "^4.0.4",
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
-    "typescript": "^4.2.3",
     "webpack": "^5.24.4",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",

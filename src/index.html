@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.cloneNode%2CHTMLTemplateElement%2CElement.prototype.append%2CElement.prototype.remove%2CNodeList.prototype.forEach%2CObject.assign%2CElement.prototype.toggleAttribute%2Cdocument.querySelector"></script>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="{%=o.htmlWebpackPlugin.files.favicon%}" rel="shortcut icon">
 </head>
 <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
   <canvas is="star-background"></canvas>
   <header>
     <a href="/">NOT Among us</a>
